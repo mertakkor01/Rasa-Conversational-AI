@@ -1,0 +1,174 @@
+version: '3.1'
+intents:
+- affirm
+- alternate_info
+- ask_how_are_you
+- bot_challenge
+- category
+- change_color
+- chitchat:
+    used_entities:
+    - category
+    - color
+    - email
+    - number
+    - order_number
+    is_retrieval_intent: true
+- deny
+- feedback
+- goodbye
+- greet
+- inform_change
+- inform_change_with_color_product
+- inform_change_with_order_number
+- inform_change_with_order_number_product
+- inform_email
+- inform_order_number
+- inform_return
+- inform_return_with_color_product
+- inform_return_with_order_number
+- inform_return_with_product_category
+- mood_great
+- mood_unhappy
+- order_status
+- order_status_with_email
+- order_status_with_order_num
+- order_status_with_order_number
+- out_of_scope
+- promotions
+- thanks
+entities:
+- color
+- category
+- order_number
+- email
+- number
+slots:
+  color:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: color
+  category:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: category
+  email:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: email
+  order_number:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: order_number
+responses:
+  utter_default:
+  - text: Sorry, I did not understand. Can you rephrase it?
+  utter_greet:
+  - text: Hello, I am a conversational AI, RasAkkor!
+  utter_ask_mood:
+  - text: How are you doing today?
+  - text: How is everything?
+  utter_help:
+  - text: How can I help you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_other_help:
+  - text: Anything else I can help you with?
+  utter_did_that_help:
+  - text: Did that help?
+  utter_happy:
+  - text: Great to hear! How can I help you?
+  utter_goodbye:
+  - text: Good bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_change_size:
+  - text: Which size you want to change with?
+  - text: Which size would you like?
+  utter_change_color:
+  - text: Which color would you like?
+  - text: Which color you you want to change with?
+  - text: To which color would you want to change?
+  utter_ask_email:
+  - text: Please tell me you email
+  utter_ask_order_number:
+  - text: What is your order number?
+  - text: Please tell me your order number.
+  utter_change:
+  - text: Which one would you like to change?
+  utter_ask_something_else:
+  - text: Please ask request something else.
+  utter_alternate_info:
+  - text: Sorry, you can only provide email and order number.
+  utter_provide_change:
+  - text: Sure! What would you like as a change?
+  utter_change_successfull:
+  - text: Your item has been changed successfully!
+  utter_provide_info_status:
+  - text: Your order has been shipped and will be at your address soon.
+  - text: Your order is on its way and will reach you soon.
+  - text: Your order is being prepared. It will be shipped soon.
+  utter_return_info:
+  - text: Alright, our address is 'Via Sommarive, 9, 38123 Povo,Trento TN, Italy'. You will get your money back as soon as we receive the product back.
+  utter_ask_how_are_you:
+  - text: I am fine, thanks a lot for asking!
+  - text: I am functioning well, thanks!
+  - text: I am very good, thank you!
+  utter_feedback:
+  - text: Can you please rate your experience? (Great - Good - Bad - Very bad)
+  utter_thank:
+  - text: Thank you for your contribution! Have a great day!
+  utter_sorry:
+  - text: Sorry to hear that, I will try to improve more! Have a great day!
+  utter_mood_great:
+  - text: Great to hear!
+  - text: That's great!
+  utter_mood_unhappy:
+  - text: Sorry to hear that, what can I do for you?
+  - text: I am sorry to hear that, can I do something for you?
+  utter_bot_challenge:
+  - text: I am an AI bot powered by RASA.
+  - text: I am an AI named RasAkkor
+  utter_chitchat/ask_joke:
+  - text: Why do we tell actors to 'break a leg'? Because every play has a cast :)
+  - text: 'Hear about the new restaurant karma? There is no menu: You get what you deserve :)'
+  - text: Why don't scientists trust atoms? Because they make up everything :)
+  utter_out_of_scope:
+  - text: Sorry, I cannot do that. Please try something different!
+  utter_chitchat/whats_your_name:
+  - text: My name is RasAkkor
+  - text: It is RasAkkor
+  utter_wait:
+  - text: Give me a second, I am checking your order..
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_bye
+- action_default_fallback
+- action_provide_info_item
+- action_verify_item
+- action_verify_refund_category
+- action_verify_refund_email
+- action_verify_refund_id
+- action_verify_status_email
+- utter_ask_mood
+- utter_ask_order_number
+- utter_change_successfull
+- utter_chitchat
+- utter_feedback
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_other_help
+- utter_provide_change
+- utter_provide_info_status
+- utter_return_info
+- utter_sorry
+- utter_thank
+- utter_wait

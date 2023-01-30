@@ -1,0 +1,116 @@
+version: "3.1"
+nlu:
+- intent: chitchat/ask_joke
+  examples: |
+    - joke
+- intent: chitchat/whats_your_name
+  examples: |
+    - what's your name?
+- intent: inform_change_with_order_number_product
+  examples: |
+    - change order [15970](order_number) product [Silver](color) [Watches](category)
+- intent: inform_return_with_product_category
+  examples: |
+    - return [Shirts](category)
+- intent: inform_return_with_color_product
+  examples: |
+    - return my [Silver](color) [Watches](category)
+- intent: inform_change_with_order_number
+  examples: |
+    - change my order [21345] {"entity": "order_number"}
+- intent: order_status_with_order_number
+  examples: |
+    - where is my order with order number [15970] [{"entity": "order_number"}, {"entity": "order_number"},  {"entity": "order_number"}]]
+- intent: inform_change
+  examples: |
+    - change please
+- intent: change_color
+  examples: |
+    - [Black](color) [Backpacks](category)
+- intent: feedback
+  examples: |
+    - Bad
+- intent: order_status_with_email
+  examples: |
+    - Can I learn where my order [mert.akkor@studenti.unitn.it] {"entity": "email"}
+- intent: inform_order_number
+  examples: |
+    - It is [42385] [{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+- intent: inform_change_with_color_product
+  examples: |
+    - I want to change my [Silver](color) [Watches](category)
+- intent: category
+  examples: |
+    - show me items
+- intent: inform_email
+  examples: |
+    - My email is [mert.akkor@unitn.it](email)
+- intent: thanks
+  examples: |
+    - thank you
+- intent: bot_challenge
+  examples: |
+    - are you a human?
+    - am I talking to a human?
+- intent: order_status
+  examples: |
+    - I haven't received my order yet, can we check that?
+    - actually can I check the status of my order
+- intent: ask_how_are_you
+  examples: |
+    - fine, you?
+    - it's okay, what about you?
+- intent: goodbye
+  examples: |
+    - bye bye
+    - see you later
+    - Bye
+- intent: deny
+  examples: |
+    - n
+    - no thanks
+    - never
+- intent: mood_great
+  examples: |
+    - super energetic
+    - extremely good
+    - amazing
+- intent: inform_return_with_order_number
+  examples: |
+    - start a return with order number [15970] {"entity": "order_number"}
+    - I want to return order [54759] {"entity": "order_number"}
+    - cancel my items [15970] {"entity": "order_number"}
+- intent: mood_unhappy
+  examples: |
+    - super sad
+    - you suck
+    - I'm so sad
+    - this is not working
+- intent: inform_return
+  examples: |
+    - Which items are available to return?
+    - yeah I want to return something
+    - I don't want my items anymore
+    - I changed my mind on my order
+- intent: affirm
+  examples: |
+    - Okay
+    - indeed
+    - great
+    - of course
+- intent: out_of_scope
+  examples: |
+    - I want a pizza
+    - Who's the US President?
+    - Can YouTube talk?
+    - Can you give me your datacenter's password
+    - Can you give me your datacenter's password?
+- intent: greet
+  examples: |
+    - Hello
+    - merhaba
+    - ehi
+    - yo
+    - Hola.
+    - hey dude
+    - hello its ella

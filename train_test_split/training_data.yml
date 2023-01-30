@@ -1,0 +1,289 @@
+version: "3.1"
+nlu:
+- intent: chitchat/ask_joke
+  examples: |
+    - make a joke
+    - joke please
+    - Tell me a joke
+- intent: chitchat/whats_your_name
+  examples: |
+    - can you tell me your name?
+    - name
+    - your name?
+- intent: inform_change_with_order_number_product
+  examples: |
+    - I want to change my [Silver](color) [Watches](category) with order number [15970](order_number)
+- intent: inform_return_with_product_category
+  examples: |
+    - return my [Tshirts](category)
+    - I want to return my [Tshirts](category)
+    - I would like to return [Shorts](category)
+- intent: inform_return_with_color_product
+  examples: |
+    - I would like to return my [Blue](color) [Jeans](category)
+    - return [Blue](color) [Jeans](category)
+    - I want to return my [Blue](color) [Jeans](category)
+- intent: inform_change_with_order_number
+  examples: |
+    - I want to change my [15970] {"entity": "order_number"}
+    - I would like to change order [15970] {"entity": "order_number"}
+    - change order [99485] {"entity": "order_number"}
+- intent: order_status_with_order_number
+  examples: |
+    - where is my order [15970] [{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - where is my order [15970][{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - where is order [95812] [{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - Can I learn where my order [04123] [ {"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+- intent: inform_change
+  examples: |
+    - change
+    - I want change
+    - I want to change my product
+    - I want to change my order
+- intent: change_color
+  examples: |
+    - [Brown](color) [Belts](category)
+    - I need [Brown](color) [Belts](category)
+    - I want [Blue](color) [Sweatshirts](category)
+    - Change to [Brown](color) [Belts](category)
+- intent: feedback
+  examples: |
+    - Good
+    - Very good
+    - Okay
+    - Very bad
+- intent: order_status_with_email
+  examples: |
+    - order status with email [mert.akkor@unitn.it][{"entity": "email"}, {"entity": "email"}, {"entity": "email"}]
+    - order with email [mert.akkor@unitn.it][{"entity": "email"}, {"entity": "email"}, {"entity": "email"}]
+    - where is order [mertakkor@gmail.com] {"entity": "email"}
+    - where is my order with email [mert.akkor@unitn.it][{"entity": "email"}, {"entity": "email"}, {"entity": "email"}]
+    - where is my order with email [mert.akkor@unitn.it] {"entity": "email"}
+- intent: inform_order_number
+  examples: |
+    - [15970][{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - It's [15970][{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - My order number is [40434][{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - order number [15970][{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - [15970][{"entity": "order_number"}, {"entity": "order_number"}]
+- intent: inform_change_with_color_product
+  examples: |
+    - can you please change my [Silver](color) [Watches](category)
+    - change [Silver](color) [Watches](category)
+    - change my [Silver](color) [Watches](category)
+    - Can you please change [Silver](color) [Watches](category)
+    - please change [Silver](color) [Watches](category)
+- intent: category
+  examples: |
+    - I would like to see items
+    - what items do you have?
+    - item categories
+    - items
+    - what do you have?
+- intent: inform_email
+  examples: |
+    - It is [abcd@gmail.com](email)
+    - My email [mert.akkor@unitn.it](email)
+    - [mert_akkor@hotmail.com](email)
+    - email [mert.akkor@studenti.unitn.it](email)
+    - [mert.akkor@unitn.it](email)
+    - where is order [mert.akkor@unitn.it][{"entity": "email"}, {"entity": "email"}]
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you so much
+    - Awesome, thanks!
+    - thx
+    - thanks a lot
+    - okay, thanks
+- intent: bot_challenge
+  examples: |
+    - human?
+    - bot?
+    - are you a bot?
+    - are you real?
+    - am I talking to a bot?
+- intent: order_status
+  examples: |
+    - I would like to check the status of my order pls
+    - Check status of my order
+    - when will they get here
+    - check status
+    - where is my order?
+    - I would like an update on my order
+    - I want to check the status of my order
+    - check status of my order
+- intent: ask_how_are_you
+  examples: |
+    - How are you doing?
+    - I am good, you?
+    - How is it going?
+    - meh, you?
+    - what's up?
+    - All good, how are you?
+    - it's fine, what about you?
+    - all good, you?
+    - How are you?
+    - not too good, you?
+- intent: goodbye
+  examples: |
+    - cee you later
+    - goodbye
+    - see you
+    - have a nice day
+    - see you around
+    - good bye
+    - cu
+    - bb
+    - good night
+    - bye
+- intent: deny
+  examples: |
+    - I would not like it to be added to the list
+    - I don't think so
+    - no
+    - no thank you
+    - nop
+    - don't like that
+    - nah
+    - not really
+    - no, thanks
+    - no, thank you
+    - no way
+    - nope
+- intent: mood_great
+  examples: |
+    - I am good, thanks
+    - I am amazing
+    - Great
+    - I am going to save the world
+    - Good
+    - great
+    - All good
+    - good
+    - perfect
+    - I am feeling very good
+    - I am great
+    - good thanks
+    - wonderful
+- intent: inform_return_with_order_number
+  examples: |
+    - start a return with order [15970] {"entity": "order_number"}
+    - I don't want my order [76489] {"entity": "order_number"}
+    - I would like to cancel my order [15970] [{"entity": "order_number"}, {"entity": "order_number"}, {"entity": "order_number"}]
+    - cancel my order [30039] {"entity": "order_number"}
+    - I would like a refund [23123] {"entity": "order_number"}
+    - I changed my mind on my order [32134] {"entity": "order_number"}
+    - how do I get a refund [15970] {"entity": "order_number"}
+    - cancel [76759] {"entity": "order_number"}
+    - how do I return my items in order [15970] {"entity": "order_number"}
+    - Okay. I would like to return some items I bought for order [65748] {"entity": "order_number"}
+    - can I get a refund for order [76859] {"entity": "order_number"}
+    - I would like a refund on my order [12347] {"entity": "order_number"}
+    - I want a refund order [45643] {"entity": "order_number"}
+    - start a refund with order [15970] {"entity": "order_number"}
+- intent: mood_unhappy
+  examples: |
+    - Very bad
+    - sad
+    - my day was horrible
+    - so sad
+    - I am disappointed
+    - Bad
+    - bad
+    - extremly sad
+    - not good
+    - very sad
+    - unhappy
+    - I am sad
+    - I don't feel very well
+    - very bad
+    - not very good
+- intent: inform_return
+  examples: |
+    - cancel my order
+    - return some items
+    - start a refund
+    - I would like a refund on my order
+    - I don't want my order
+    - start a return
+    - Okay. I would like to return some items I bought
+    - I would like to cancel my order
+    - how do I return my items?
+    - I would like a refund
+    - can I get a refund
+    - cancel my items
+    - I changed my mind
+    - how do I return these?
+    - I want a refund
+    - how do I get a refund
+- intent: affirm
+  examples: |
+    - yep
+    - yea
+    - okay, thanks
+    - yes
+    - i understand
+    - y
+    - fine
+    - OK
+    - that sounds good
+    - alright
+    - I accept
+    - correct
+    - yeah
+    - sure
+    - okay
+    - that's fine
+- intent: out_of_scope
+  examples: |
+    - what the weather today ?
+    - my washing machine isn't working
+    - hows the weather
+    - my tv isn't working
+    - Can you please send me an uber
+    - what is the square root of 5
+    - what year is it
+    - 2+2
+    - I want to order a pizza
+    - what is the meaning of life.
+    - Can you call me back ?
+    - I want to know the weather
+    - what is the weather today
+    - Fridge Isn't Running
+    - Can you make sandwiches?
+    - Can I get a hamburger?
+    - what is the weather
+    - order a pizza
+    - blah blah
+    - tell me a joke
+- intent: greet
+  examples: |
+    - Hey
+    - ciao
+    - good day
+    - hallo
+    - hi!
+    - good afternoon
+    - good morning
+    - goodmorning
+    - hello are you still there
+    - hiyaa
+    - halo
+    - HEY
+    - hey there
+    - hi there
+    - ei
+    - hey
+    - good evening
+    - let's go
+    - goodevening
+    - Hello?
+    - moin
+    - hello
+    - hello there
+    - hi
+    - Hi
+    - howdy
+    - welcome
+    - HI

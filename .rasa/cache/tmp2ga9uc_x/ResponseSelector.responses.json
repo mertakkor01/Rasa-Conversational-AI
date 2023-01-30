@@ -1,0 +1,55 @@
+{
+  "utter_chitchat/ask_how_are_you": [
+    {
+      "text": "I am fine, thanks a lot for asking!"
+    },
+    {
+      "text": "I am functioning well, thanks!"
+    },
+    {
+      "text": "I am very good, thank you!"
+    }
+  ],
+  "utter_chitchat/feedback": [
+    {
+      "text": "Sure, please write your feedback."
+    }
+  ],
+  "utter_chitchat/goodfeedback": [
+    {
+      "text": "Thank you for your kind words. Your feedback has been recorded. Can I do something else for you?"
+    }
+  ],
+  "utter_chitchat/badfeedback": [
+    {
+      "text": "Thank you for your feedback. Considering your feedback, I will work to improve myself!"
+    }
+  ],
+  "utter_chitchat/mood_great": [
+    {
+      "text": "Great to hear!"
+    },
+    {
+      "text": "That's great!"
+    }
+  ],
+  "utter_chitchat/mood_unhappy": [
+    {
+      "text": "Sorry to hear that, what can I do for you?"
+    },
+    {
+      "text": "I am sorry to hear that, can I do something for you?"
+    }
+  ],
+  "utter_chitchat/ask_joke": [
+    {
+      "text": "Why do we tell actors to 'break a leg'? Because every play has a cast :)"
+    },
+    {
+      "text": "Hear about the new restaurant karma? There is no menu: You get what you deserve :)"
+    },
+    {
+      "text": "Why don't scientists trust atoms? Because they make up everything :)"
+    }
+  ]
+}

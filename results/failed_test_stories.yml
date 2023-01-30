@@ -1,0 +1,57 @@
+version: "3.1"
+stories:
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy  # predicted: action_unlikely_intent
+- story: happy path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy  # predicted: action_unlikely_intent
+  - intent: goodbye
+  - action: utter_goodbye  # predicted: action_bye
+- story: sad path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_ask_mood
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_sorry
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy  # predicted: utter_change_successfull after action_unlikely_intent
+- story: sad path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_ask_mood
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_sorry
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_other_help
+- story: sad path 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_ask_mood
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: utter_sorry
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_other_help
+- story: say goodbye (.\tests\test_stories.yml)
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye  # predicted: action_bye
+- story: bot challenge (.\tests\test_stories.yml)
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot  # predicted: utter_bot_challenge
+  - action: action_listen  # predicted: utter_other_help

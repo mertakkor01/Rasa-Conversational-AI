@@ -1,0 +1,58 @@
+[
+  {
+    "text": "change order 15970 product Silver Watches",
+    "intent": "inform_change_with_order_number_product",
+    "intent_prediction": {
+      "name": "inform_change_with_color_product",
+      "confidence": 0.24952472746372223
+    }
+  },
+  {
+    "text": "return my Silver Watches",
+    "intent": "inform_return_with_color_product",
+    "intent_prediction": {
+      "name": "inform_change_with_color_product",
+      "confidence": 0.38530710339546204
+    }
+  },
+  {
+    "text": "change my order [21345] {\"entity\": \"order_number\"}",
+    "intent": "inform_change_with_order_number",
+    "intent_prediction": {
+      "name": "inform_return_with_order_number",
+      "confidence": 0.3022819757461548
+    }
+  },
+  {
+    "text": "where is my order with order number [15970] [{\"entity\": \"order_number\"}, {\"entity\": \"order_number\"},  {\"entity\": \"order_number\"}]]",
+    "intent": "order_status_with_order_number",
+    "intent_prediction": {
+      "name": "inform_return_with_order_number",
+      "confidence": 0.21405591070652008
+    }
+  },
+  {
+    "text": "Bad",
+    "intent": "feedback",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.38857123255729675
+    }
+  },
+  {
+    "text": "It is [42385] [{\"entity\": \"order_number\"}, {\"entity\": \"order_number\"}, {\"entity\": \"order_number\"}]",
+    "intent": "inform_order_number",
+    "intent_prediction": {
+      "name": "inform_return_with_order_number",
+      "confidence": 0.2650546431541443
+    }
+  },
+  {
+    "text": "great",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.49587562680244446
+    }
+  }
+]

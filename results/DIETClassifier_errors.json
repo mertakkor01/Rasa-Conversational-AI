@@ -1,0 +1,153 @@
+[
+  {
+    "text": "I want Blue Sweatshirts",
+    "entities": [
+      {
+        "start": 7,
+        "end": 11,
+        "value": "Blue",
+        "entity": "color"
+      },
+      {
+        "start": 12,
+        "end": 23,
+        "value": "Sweatshirts",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "mert_akkor@hotmail.com",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "value": "mert_akkor@hotmail.com",
+        "entity": "email"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "It is abcd@gmail.com",
+    "entities": [
+      {
+        "start": 6,
+        "end": 20,
+        "value": "abcd@gmail.com",
+        "entity": "email"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "where is my order with email [mert.akkor@unitn.it] {\"entity\": \"email\"}",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "email",
+        "start": 30,
+        "end": 49,
+        "confidence_entity": 0.9955138564109802,
+        "value": "mert.akkor@unitn.it",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Black Backpacks",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Black",
+        "entity": "color"
+      },
+      {
+        "start": 6,
+        "end": 15,
+        "value": "Backpacks",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is the square root of 5",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "order_number",
+        "start": 27,
+        "end": 28,
+        "confidence_entity": 0.9954969882965088,
+        "value": "5",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "where is order [mertakkor@gmail.com] {\"entity\": \"email\"}",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "email",
+        "start": 16,
+        "end": 35,
+        "confidence_entity": 0.9536464810371399,
+        "value": "mertakkor@gmail.com",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can I learn where my order [mert.akkor@studenti.unitn.it] {\"entity\": \"email\"}",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "email",
+        "start": 28,
+        "end": 56,
+        "confidence_entity": 0.9728612303733826,
+        "value": "mert.akkor@studenti.unitn.it",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "2+2",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "order_number",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9744485020637512,
+        "value": "2+2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "email mert.akkor@studenti.unitn.it",
+    "entities": [
+      {
+        "start": 6,
+        "end": 34,
+        "value": "mert.akkor@studenti.unitn.it",
+        "entity": "email"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "email",
+        "start": 6,
+        "end": 34,
+        "confidence_entity": 0.7023362740811456,
+        "value": "mert.akkor@studenti.unitn.it",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  }
+]

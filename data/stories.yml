@@ -1,0 +1,371 @@
+version: "3.1"
+
+stories:
+
+- story: order status order number good feedback
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: order_status
+  - action: utter_ask_order_number
+  - intent: inform_order_number
+    entities:
+    - order_number: '15970'
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: action_provide_info_item
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+- story: order status with order number good feedback
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: order_status_with_order_number
+    entities:
+    - order_number: '15970'
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: utter_wait
+  - action: action_provide_info_item
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+- story: order status with email bad feedback
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: order_status_with_email
+    entities:
+    - email: mert.akkor@unitn.it
+  - slot_was_set:
+    - email: mert.akkor@unitn.it
+  - action: utter_wait
+  - action: action_verify_status_email
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_unhappy
+  - action: utter_sorry
+
+
+
+- story: order refund bad feedback
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_return
+  - action: utter_ask_email
+  - intent: inform_email
+    entities:
+    - email: mert.akkor@unitn.it
+  - slot_was_set:
+    - email: mert.akkor@unitn.it
+  - action: utter_wait
+  - action: action_verify_refund_email
+  - intent: affirm
+  - action: utter_return_info
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_unhappy
+  - action: utter_sorry
+
+
+- story: order refund with order number
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_return_with_order_number
+    entities:
+    - order_number: '15970'
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: utter_wait
+  - action: action_verify_refund_id
+  - intent: affirm
+  - action: utter_return_info
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_unhappy
+  - action: utter_sorry
+
+
+- story: order refund with category and color
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_return_with_color_product
+    entities:
+    - color: Blue
+    - category: Jeans
+  - slot_was_set:
+    - color: Blue
+    - category: Jeans
+  - action: utter_ask_order_number
+  - intent: inform_order_number
+    entities:
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: action_verify_refund_id
+  - intent: affirm
+  - action: action_verify_refund_category
+  - intent: affirm
+  - action: utter_return_info
+  - action: utter_other_help
+  - intent: deny
+  - action: action_bye
+
+
+- story: path order change
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_change_with_color_product
+    entities:
+    - color: Silver
+    - category: Watches
+  - slot_was_set:
+    - color: Silver
+    - category: Watches
+  - action: utter_ask_order_number
+  - intent: inform_order_number
+    entities:
+    - order_number: '15970'
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: utter_wait
+  - action: action_verify_refund_id
+  - intent: affirm
+  - action: utter_provide_change
+  - intent: change_color
+    entities:
+    - color: Brown
+    - category: Belts
+  - slot_was_set:
+    - color: Brown
+    - category: Belts
+  - action: action_verify_item
+  - intent: affirm
+  - action: utter_change_successfull
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+- story: order change with order number
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_change_with_order_number
+    entities:
+    - order_number: '15970'
+    - order_number: '15970'
+    - number: 15970
+  - slot_was_set:
+    - order_number: '15970'
+  - action: utter_wait
+  - action: utter_provide_change
+  - intent: change_color
+    entities:
+    - color: Black
+    - category: Backpacks
+  - action: action_verify_item
+  - slot_was_set:
+    - color: Black
+    - category: Backpacks
+  - intent: affirm
+  - action: utter_change_successfull
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+- story: order change with number and product good fb
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_change_with_order_number_product
+    entities:
+    - order_number: '30656'
+    - color: White
+    - category: Tshirts
+    - order_number: '30656'
+    - color: White
+    - category: Tshirts
+    - number: 30656
+  - slot_was_set:
+    - color: White
+  - slot_was_set:
+    - category: Tshirts
+  - slot_was_set:
+    - order_number: '30656'
+  - action: utter_wait
+  - action: utter_provide_change
+  - intent: change_color
+    entities:
+    - color: Black
+    - category: Backpacks
+    - color: Black
+    - category: Backpacks
+  - slot_was_set:
+    - color: Black
+  - slot_was_set:
+    - category: Backpacks
+  - action: action_verify_item
+  - intent: affirm
+  - action: utter_change_successfull
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+
+
+
+
+- story: unhappy path order status with email
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_other_help
+  - intent: order_status_with_email
+    entities:
+    - email: mert.akkor@studenti.unitn.it
+  - slot_was_set:
+    - email: mert.akkor@studenti.unitn.it
+  - action: utter_wait
+  - action: utter_provide_info_status
+  - intent: thanks
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
+
+
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_email
+    entities:
+    - email: mert.akkor@unitn.it
+    - email: mert.akkor@unitn.it
+    - email: mert.akkor@unitn.it
+  - slot_was_set:
+    - email: mert.akkor@unitn.it
+  - action: utter_wait
+  - action: action_verify_status_email
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_unhappy
+  - action: utter_sorry
+  - intent: goodbye
+  - action: action_bye
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inform_change_with_order_number_product
+    entities:
+    - order_number: '30656'
+    - color: White
+    - category: Tshirts
+    - order_number: '30656'
+    - color: White
+    - category: Tshirts
+    - number: 30656
+  - slot_was_set:
+    - color: White
+  - slot_was_set:
+    - category: Tshirts
+  - slot_was_set:
+    - order_number: '30656'
+  - action: utter_wait
+  - action: utter_provide_change
+  - intent: change_color
+    entities:
+    - color: Black
+    - category: Backpacks
+    - color: Black
+    - category: Backpacks
+  - slot_was_set:
+    - color: Black
+  - slot_was_set:
+    - category: Backpacks
+  - action: action_verify_item
+  - intent: affirm
+  - action: utter_change_successfull
+  - action: utter_other_help
+  - intent: deny
+  - action: utter_feedback
+  - intent: mood_great
+  - action: utter_thank
