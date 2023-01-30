@@ -1,5 +1,4 @@
 # Rasa-Conversational-AI - HumanMachineDialogue Project
 Rasa shopping assistant for Human Machine Dialogue Project
 
-Mert Akkor
-221256
+Mert Akkor - 221256
