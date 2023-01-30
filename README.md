@@ -1,2 +1,2 @@
-# Rasa-Conversational-AI - HMD Project
-Rasa chatbot for shopping tasks
+# Rasa-Conversational-AI - HUmanMachineDialogue Project
+Rasa shopping assistant for Human Machine Dialogue Project
