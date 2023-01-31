@@ -175,8 +175,6 @@ stories:
   - slot_was_set:
     - order_number: '15970'
   - action: utter_wait
-  - action: action_verify_refund_id
-  - intent: affirm
   - action: utter_provide_change
   - intent: change_color
     entities:
